@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <label for="Número 1"></label>
+    <input type="number" id="num1" name="num1" value="0">
+
+    <label for="Número 2"></label>
+    <input type="number" name="num2" id="num2" value="0">
+
+    <label for="Operação"></label>
+    <select name="operacao" id="operation">
+        <option value="0" selected>Soma</option>
+        <option value="1">Subtração</option>
+        <option value="2">Multiplicação</option>
+        <option value="3">Divisão</option>
+    </select>
+    <hr style="margin: 10px 0;">
+
+    <span>Resultado: </span>
+    <span id="result"></span>
+
+    <script src="js/variaveisOperadores.js"></script>
+
+</body>
+
+
+</html>
