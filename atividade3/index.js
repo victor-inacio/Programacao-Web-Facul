@@ -1,11 +1,11 @@
 const express = require("express")
 const port = 8080
 const app = express()
+const { somar, subtrair, dividir, multiplicar } = require("./util/calculadora.js")
 
 app.get('/subtrair/:a/:b', (req, res) => {
     const { a, b } = req.params
-    console.log(a, b)
-    const result = a - b
+    const result = subtrair(Number(a), Number(b))
 
     return res
         .status(200)
@@ -14,7 +14,7 @@ app.get('/subtrair/:a/:b', (req, res) => {
 
 app.get('/somar/:a/:b', (req, res) => {
     const { a, b } = req.params
-    const result = a + b
+    const result = somar(Number(a), Number(b))
 
     return res
         .status(200)
@@ -23,7 +23,7 @@ app.get('/somar/:a/:b', (req, res) => {
 
 app.get('/multiplicar/:a/:b', (req, res) => {
     const { a, b } = req.params
-    const result = a * b
+    const result = multiplicar(Number(a), Number(b))
 
     return res
         .status(200)
@@ -39,7 +39,7 @@ app.get('/dividir/:a/:b', (req, res) => {
             .send("Não é possível dividir por zero")
     }
 
-    const result = a / b
+    const result = dividir(Number(a), Number(b))
 
 
 
