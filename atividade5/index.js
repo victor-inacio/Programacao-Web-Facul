@@ -11,14 +11,25 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
 
+    let error = req.query.valid == 0
+
     res.render('index.mustache', {
+        error
     })
 
 })
 
 app.post('/dados', (req, res) => {
+    console.log(req.body);
 
+    let isAll = Object.values(req.body).every((a) => {
 
+        return a !== ''
+    })
+
+    if (!isAll) {
+        return res.redirect('/?valid=0')
+    }
 
     res.render('dados.mustache', { ...req.body })
 
